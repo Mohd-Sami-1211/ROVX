@@ -197,7 +197,7 @@ export default function RegistrationForm() {
   ];
 
   return (
-    <div className="registration-card">
+    <div className="registration-card" id="participant-registration">
       <div className="form-progress" aria-label={`Step ${step} of 2`}>
         <span className={step === 1 ? "active" : "complete"} aria-current={step === 1 ? "step" : undefined}>
           <b>{step > 1 ? <Check size={14} aria-hidden="true" /> : "01"}</b> THE DRIVER

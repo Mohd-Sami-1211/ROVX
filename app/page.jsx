@@ -45,10 +45,10 @@ export default function Home(){
   <header className="site-header"><div className="header-inner">
     <RovxLogo/>
     <nav className="desktop-nav" aria-label="Main navigation"><a className="nav-home" href="#home">Home</a><a href="#event">The race</a><a href="#experience">Experience</a><a href="#partners">Partners</a><a href="#faqs">FAQs</a></nav>
-    <a className="button red-button header-cta" href="/register">Join the grid <ArrowUpRight size={15}/></a>
+    <a className="button red-button header-cta" href="/register#participant-registration">Join the grid <ArrowUpRight size={15}/></a>
     <button className="menu-button" aria-expanded={mobileOpen} aria-controls="mobile-nav" aria-label={mobileOpen?"Close navigation":"Open navigation"} onClick={()=>setMobileOpen(!mobileOpen)}>{mobileOpen?<X/>:<Menu/>}</button>
   </div>
-  {mobileOpen&&<nav id="mobile-nav" className="mobile-nav" aria-label="Mobile navigation" onKeyDown={event=>{if(event.key==="Escape")setMobileOpen(false)}}>{[["Home","#home"],["The race","#event"],["Experience","#experience"],["Partners","#partners"],["FAQs","#faqs"]].map(([label,href])=><a href={href} key={href} onClick={()=>setMobileOpen(false)}>{label}<ArrowUpRight size={20}/></a>)}<a href="/register" onClick={()=>setMobileOpen(false)}>Join the grid<ArrowUpRight size={20}/></a></nav>}
+  {mobileOpen&&<nav id="mobile-nav" className="mobile-nav" aria-label="Mobile navigation" onKeyDown={event=>{if(event.key==="Escape")setMobileOpen(false)}}>{[["Home","#home"],["The race","#event"],["Experience","#experience"],["Partners","#partners"],["FAQs","#faqs"]].map(([label,href])=><a href={href} key={href} onClick={()=>setMobileOpen(false)}>{label}<ArrowUpRight size={20}/></a>)}<a href="/register#participant-registration" onClick={()=>setMobileOpen(false)}>Join the grid<ArrowUpRight size={20}/></a></nav>}
   </header>
   <main id="main">
     <section className="hero" id="home" aria-labelledby="hero-heading">
@@ -56,11 +56,10 @@ export default function Home(){
       <div className="hero-vignette"/>
       <div className="hero-grid" aria-hidden="true"/>
       <div className="hero-content container">
-        <div className="edition-label"><span className="red-dot"/> THE FIRST EDITION <span className="edition-rule"/><span>13.12.2026</span></div>
-        <p className="hero-event">ROVX—BHADERWAH 26</p>
+        <p className="hero-event"><span>ROVX-Bhaderwah</span><span className="hero-event-year">26</span></p>
         <h1 id="hero-heading">Born for<br/><em>the wild.</em></h1>
         <p className="hero-description">The mountains don't do ordinary.<br/>Neither do we. Welcome to the untamed.</p>
-        <div className="hero-actions"><a className="button red-button" href="register">Register to race <ArrowUpRight size={17}/></a><a className="button glass-button" href={PASSES} target="_blank" rel="noreferrer">Get audience passes <ArrowUpRight size={16}/></a></div>
+        <div className="hero-actions"><a className="button red-button" href="/register#participant-registration">Register to race <ArrowUpRight size={17}/></a><a className="button glass-button" href={PASSES} target="_blank" rel="noreferrer">Get audience passes <ArrowUpRight size={16}/></a></div>
         <div className="presenter-lockup"><div className="presenter-brand"><span>PRESENTED BY</span><Bagspackgo/></div><span className="collaboration-cross">×</span><div className="bda-lockup"><span>IN COLLABORATION WITH</span><strong>BDA</strong><small>Bhaderwah Development Authority</small></div></div>
       </div>
       <div className="hero-bottom container"><EventCountdown/><a href="#event" className="scroll-link">ENTER THE UNTAMED <ArrowDown size={15}/></a></div>
@@ -73,7 +72,7 @@ export default function Home(){
     </div>
 
     <section id="event" className="event-section section container">
-      <div className="event-story reveal"><SectionLabel number="01">A DIFFERENT BREED</SectionLabel><h2>Leave ordinary<br/>in the <em>dust.</em></h2><p className="lead">Some roads are worth leaving.</p><p>ROVX brings its first-ever edition to Bhaderwah. An offroad motorsport race for cars, set against the raw beauty of the mountains.</p><p>For those who build their machines with purpose. Who choose the harder line. Who feel most alive beyond the asphalt.</p><a href="#register" className="underlined-link">Your next story starts here <ArrowUpRight size={16}/></a></div>
+      <div className="event-story reveal"><SectionLabel number="01">A DIFFERENT BREED</SectionLabel><h2>Leave ordinary<br/>in the <em>dust.</em></h2><p className="lead">Some roads are worth leaving.</p><p>ROVX brings its first-ever edition to Bhaderwah. An offroad motorsport race for cars, set against the raw beauty of the mountains.</p><p>For those who build their machines with purpose. Who choose the harder line. Who feel most alive beyond the asphalt.</p><a href="/register#participant-registration" className="underlined-link">Your next story starts here <ArrowUpRight size={16}/></a></div>
       <div className="event-visual reveal"><EditorialImage src="/media/rally-campaign-v2.webp" alt="A modified black rally coupe driving through crimson-lit mountain gravel"/><span className="corner-cross top-left">+</span><span className="corner-cross bottom-right">+</span><div className="image-caption"><span>ROVX / THE OFFROAD SPIRIT</span><span>01 — 26</span></div><div className="image-tag"><span className="red-dot"/> MADE FOR THE ONES WHO DARE.</div></div>
       <div className="race-details reveal">
         <div className="detail-item"><span className="detail-index">01</span><div><h3>The playground</h3><strong>Bhaderwah</strong><p>Exact venue &amp; course to be announced.</p></div><MapPin size={19}/></div>
@@ -120,7 +119,7 @@ export default function Home(){
     <footer className="footer">
       <video className="section-video-bg" src="/media/footer-bg.mp4" autoPlay muted loop playsInline aria-hidden="true"/>
       <div className="section-video-overlay" aria-hidden="true"/>
-      <div className="container"><div className="footer-head"><div><span className="micro-label">13 DECEMBER 2026. BHADERWAH.</span><h2>See you in <em>the dirt.</em></h2></div><a href="#register" className="footer-round-link" aria-label="Register for ROVX"><ArrowUpRight size={32}/></a></div><div className="footer-brands"><RovxLogo/><div><span className="micro-label">AN EVENT BY</span><Bagspackgo/></div><span className="footer-bda">In collaboration with<br/><strong>Bhaderwah Development Authority</strong></span></div><details id="privacy" className="privacy-notice"><summary>Participant privacy notice <ChevronDown size={13}/></summary><p>The ROVX organizing team uses the contact, driver, and vehicle details you submit to review your application and coordinate participation. Applications are stored in the event database. Do not include identity documents, financial information, or sensitive personal information in the notes. No payment is collected here. To ask about your application or personal data, contact bagspackgo through its official website and include your application reference.</p></details><div className="footer-bottom"><span>© 2026 ROVX. A bagspackgo event.</span><span>FIRST EDITION. LASTING IMPRESSIONS.</span><a href="#home">BACK TO TOP <ArrowUpRight size={12}/></a></div></div>
+      <div className="container"><div className="footer-head"><div><span className="micro-label">13 DECEMBER 2026. BHADERWAH.</span><h2>See you in <em>the dirt.</em></h2></div><a href="/register#participant-registration" className="footer-round-link" aria-label="Register for ROVX"><ArrowUpRight size={32}/></a></div><div className="footer-brands"><RovxLogo/><div><span className="micro-label">AN EVENT BY</span><Bagspackgo/></div><span className="footer-bda">In collaboration with<br/><strong>Bhaderwah Development Authority</strong></span></div><details id="privacy" className="privacy-notice"><summary>Participant privacy notice <ChevronDown size={13}/></summary><p>The ROVX organizing team uses the contact, driver, and vehicle details you submit to review your application and coordinate participation. Applications are stored in the event database. Do not include identity documents, financial information, or sensitive personal information in the notes. No payment is collected here. To ask about your application or personal data, contact bagspackgo through its official website and include your application reference.</p></details><div className="footer-bottom"><span>© 2026 ROVX. A bagspackgo event.</span><span>FIRST EDITION. LASTING IMPRESSIONS.</span><a href="#home">BACK TO TOP <ArrowUpRight size={12}/></a></div></div>
     </footer>
   </main>
   </>;
